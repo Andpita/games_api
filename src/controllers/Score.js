@@ -8,7 +8,7 @@ class Score {
       email: 'teste@teste.com',
       game: 'cachorrinho',
     });
-    res
+    res.json(newScore);
   }
 }
 
