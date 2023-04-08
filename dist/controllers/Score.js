@@ -1,8 +1,8 @@
-import Gamer from '../models/Gamer';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _Gamer = require('../models/Gamer'); var _Gamer2 = _interopRequireDefault(_Gamer);
 
 class Score {
   async newTest(req, res) {
-    const newScore = await Gamer.create({
+    const newScore = await _Gamer2.default.create({
       nome: 'Testinho',
       points: 100,
       email: 'teste@teste.com',
@@ -12,7 +12,7 @@ class Score {
   }
 
   async index(req, res) {
-    const scores = await Gamer.findAll({
+    const scores = await _Gamer2.default.findAll({
       attributes: ['id', 'nome', 'points', 'email', 'game'],
       order: [['id', 'DESC'], ['id', 'DESC']],
     });
@@ -21,7 +21,7 @@ class Score {
 
   async store(req, res) {
     try {
-      const newScore = await Gamer.create(req.body);
+      const newScore = await _Gamer2.default.create(req.body);
 
       return res.json(newScore);
     } catch (e) {
@@ -32,4 +32,4 @@ class Score {
   }
 }
 
-export default new Score();
+exports. default = new Score();
