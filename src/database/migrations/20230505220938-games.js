@@ -1,6 +1,6 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('gamer', {
+    await queryInterface.createTable('games', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -12,7 +12,7 @@ module.exports = {
         allowNull: false,
       },
       points: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       email: {

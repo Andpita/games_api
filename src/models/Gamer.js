@@ -14,7 +14,7 @@ export default class Gamer extends Model {
         },
       },
       points: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       email: {
         type: Sequelize.STRING,
