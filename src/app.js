@@ -29,6 +29,7 @@ import score from './routes/score';
 //WhiteList Cors
 const whiteList = [
   "https://api.andpita.net",
+  "http://localhost:3002",
   "http://localhost:3001",
   "http://localhost:3000",
   "https://game.andpita.net",
