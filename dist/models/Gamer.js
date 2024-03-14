@@ -14,7 +14,7 @@
         },
       },
       points: {
-        type: _sequelize2.default.INTEGER,
+        type: _sequelize2.default.FLOAT,
       },
       email: {
         type: _sequelize2.default.STRING,

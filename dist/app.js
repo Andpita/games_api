@@ -1,8 +1,10 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }/* eslint-disable func-names */
+Object.defineProperty(exports, "__esModule", { value: true }); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }/* eslint-disable func-names */
 
 //Segurança
-var _dotenv = require('dotenv'); var _dotenv2 = _interopRequireDefault(_dotenv);
-var _path = require('path');
+const _dotenv = require('dotenv');
+
+const _dotenv2 = _interopRequireDefault(_dotenv);
+const _path = require('path');
 
 _dotenv2.default.config();
 
@@ -10,25 +12,38 @@ _dotenv2.default.config();
 require('./database');
 
 //Express
-var _express = require('express'); var _express2 = _interopRequireDefault(_express);
+const _express = require('express');
+
+const _express2 = _interopRequireDefault(_express);
 
 //Cors
-var _cors = require('cors'); var _cors2 = _interopRequireDefault(_cors);
+const _cors = require('cors');
+
+const _cors2 = _interopRequireDefault(_cors);
 
 //Segurança
-var _helmet = require('helmet'); var _helmet2 = _interopRequireDefault(_helmet);
+const _helmet = require('helmet');
+
+const _helmet2 = _interopRequireDefault(_helmet);
 
 //Resposta
-var _expressdelay = require('express-delay'); var _expressdelay2 = _interopRequireDefault(_expressdelay);
+const _expressdelay = require('express-delay');
+
+const _expressdelay2 = _interopRequireDefault(_expressdelay);
 
 //Rotas
-var _home = require('./routes/home'); var _home2 = _interopRequireDefault(_home);
+const _home = require('./routes/home');
+
+const _home2 = _interopRequireDefault(_home);
 //import token from './routes/token';
-var _score = require('./routes/score'); var _score2 = _interopRequireDefault(_score);
+const _score = require('./routes/score');
+
+const _score2 = _interopRequireDefault(_score);
 
 //WhiteList Cors
 const whiteList = [
   "https://api.andpita.net",
+  "http://localhost:3002",
   "http://localhost:3001",
   "http://localhost:3000",
   "https://game.andpita.net",
@@ -47,14 +62,14 @@ const corsOptions = {
 //APP
 class App {
   constructor() {
-    this.app = _express2.default.call(void 0, );
+    this.app = _express2.default.call(void 0);
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
     this.app.use(_cors2.default.call(void 0, corsOptions));
-    this.app.use(_helmet2.default.call(void 0, ));
+    this.app.use(_helmet2.default.call(void 0));
     this.app.use(_expressdelay2.default.call(void 0, 500));
     this.app.use(_express2.default.urlencoded({ extended: true }));
     this.app.use(_express2.default.json());
@@ -68,4 +83,4 @@ class App {
   }
 }
 
-exports. default = new App().app;
+exports.default = new App().app;
